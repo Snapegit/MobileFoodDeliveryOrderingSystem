@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cl.dao.PeisongxinxiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.cl.entity.PeisongxinxiEntity" id="peisongxinxiMap">
+        <result property="caipinmingcheng" column="caipinmingcheng"/>
+        <result property="yonghuzhanghao" column="yonghuzhanghao"/>
+        <result property="yonghuxingming" column="yonghuxingming"/>
+        <result property="shoujihao" column="shoujihao"/>
+        <result property="peisongshijian" column="peisongshijian"/>
+        <result property="qishouzhanghao" column="qishouzhanghao"/>
+        <result property="qishouxingming" column="qishouxingming"/>
+        <result property="shoujihaoma" column="shoujihaoma"/>
+        <result property="shouhuozhuangtai" column="shouhuozhuangtai"/>
+        <result property="dizhi" column="dizhi"/>
+    </resultMap>
+
+    <select id="selectListView"
+		resultType="com.cl.entity.view.PeisongxinxiView" >
+
+		SELECT  peisongxinxi.* FROM peisongxinxi  peisongxinxi 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.cl.entity.view.PeisongxinxiView" >
+		SELECT * FROM peisongxinxi  peisongxinxi <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
